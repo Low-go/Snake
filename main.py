@@ -23,6 +23,7 @@ class Game:
 
             self.screen.fill('black')
             self.level.run()
+
             pygame.display.update()
             self.clock.tick(FPS)   # should regulate our frames per second
 
