@@ -15,9 +15,9 @@ class Level:
 
     def run(self):
 
-        self.display_surface.fill((255, 183, 94))
+        self.display_surface.fill((175, 215, 70))
         self.fruit_creation() # putting this here allows my snake to be drawn over
-        self.display_surface.blit(self.snake.image, self.snake.rect)
+        #self.display_surface.blit(self.snake.image, self.snake.rect)
         self.snake.update()# calling our snake classes update method which calls other methods responsible for moving it
         self.collision()
 
@@ -39,7 +39,16 @@ class Level:
            self.fruits.draw(self.display_surface)
 
     def collision(self):
-        if self.fruits and self.snake.rect.colliderect(self.fruits.rect):
-            self.fruits = None
-            Level.fruit_there = False
+        if self.fruits is not None:
+
+            #if self.fruits and self.snake.body[0].rect.colliderect(self.fruits.rect):
+            if self.fruits.pos == self.snake.body[0]:
+                print ("hello")
+
+                #self.snake.add_nodes(self.fruits)
+                #self.snake.draw_nodes(self.display_surface)
+
+                #self.fruits = None
+                #Level.fruit_there = False
+
 

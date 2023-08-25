@@ -6,7 +6,8 @@ class Game:
 
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        cell_size = 30
+        cell_number = 20
         pygame.display.set_caption("Snake")
         self.clock = pygame.time.Clock()
 
@@ -20,8 +21,11 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == SCREEN_UPDATE:
 
-            self.screen.fill('black')
+                    self.level.snake.move()
+
+            screen.fill('black')
             self.level.run()
 
             pygame.display.update()
