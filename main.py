@@ -6,10 +6,9 @@ class Game:
 
     def __init__(self):
         pygame.init()
-        cell_size = 30
-        cell_number = 20
         pygame.display.set_caption("Snake")
         self.clock = pygame.time.Clock()
+        #hdihdihds
 
         self.level = Level()
 

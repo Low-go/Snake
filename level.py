@@ -43,12 +43,12 @@ class Level:
 
             #if self.fruits and self.snake.body[0].rect.colliderect(self.fruits.rect):
             if self.fruits.pos == self.snake.body[0]:
-                print ("hello")
+                print("Snack. Yum Yum Yum")
 
                 #self.snake.add_nodes(self.fruits)
                 #self.snake.draw_nodes(self.display_surface)
 
-                #self.fruits = None
-                #Level.fruit_there = False
+                self.fruits = None
+                Level.fruit_there = False
 
 

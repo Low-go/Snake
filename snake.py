@@ -72,21 +72,23 @@ class Fruit(pygame.sprite.Sprite):
 
         super().__init__()
         # random generated coordinates
-        """"
-        self.x = random.randint(0, WIDTH - SIZE)
-        self.y = random.randint(0, HEIGHT - SIZE)
+
+        self.x = random.randint(0, cell_number)
+        self.y = random.randint(0, cell_number)
+        """
         self.pos = Vector2(self.x, self.y)
         self.color = color
 
         self.rect = pygame.Rect(self.pos.x * SIZE, self.pos.y * SIZE, SIZE, SIZE)
         #self.rect.center = (self.x, self.y)
         """
-        self.x = 5
-        self.y = 4
+        #self.x = 5
+        #self.y = 4
         self.pos = Vector2(self.x, self.y)
+        self.color = color
 
     def draw(self, surface):
        # surface.blit(self.fruit_image, self.rect)
         #pygame.draw.rect(surface, self.color, self.rect)
-        fruit_rect = pygame.Rect(self.pos.x * SIZE, self.pos.y * SIZE, SIZE, SIZE)
-        pygame.draw.rect(screen,(127,166,114), fruit_rect)
+        fruit_rect = pygame.Rect(int(self.pos.x * SIZE), int(self.pos.y * SIZE), SIZE, SIZE)
+        pygame.draw.rect(screen, self.color, fruit_rect)
